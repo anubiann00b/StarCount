@@ -3,11 +3,11 @@ import requests
 import operator
 
 def main():
-    numPages = 40
+    numPages = 161
     users = {}
 
     for pageNum in range(1, numPages+1):
-        page = requests.get('http://chat.stackexchange.com/rooms/info/16/the-frying-pan/?tab=stars&page=' + str(pageNum))
+        page = requests.get('http://chat.stackoverflow.com/rooms/info/15/android/?tab=stars&page=' + str(pageNum))
         soup = BeautifulSoup(page.content)
         addPage(soup, users)
         print 'Page ' + str(pageNum)
